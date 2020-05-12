@@ -76,12 +76,12 @@ app.get('*', (req, res) => {
 db.sync()
   .then(() => {
     logger.log('info', 'DB Connection has been established');
-    // app.listen(PORT, null, null, () => {
-    //   app.emit('dbConnected');
-    //   // const job = new CronJob('0 0 * * *', wipeDbTrash);
-    //   // job.start();
-    // });
-    app.listen(PORT, console.log(`Server started on port ${PORT}`));
+    app.listen(PORT, null, null, () => {
+      app.emit('dbConnected');
+      //   // const job = new CronJob('0 0 * * *', wipeDbTrash);
+      //   // job.start();
+    });
+    // app.listen(PORT, console.log(`Server started on port ${PORT}`));
   })
   .catch(err => {
     logger.error('error', 'DB CONN:', err);

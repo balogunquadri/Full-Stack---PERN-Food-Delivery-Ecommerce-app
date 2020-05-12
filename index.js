@@ -11,9 +11,9 @@ import { config } from 'dotenv';
 import cors from 'cors';
 import swaggerUi from 'swagger-ui-express';
 
-import { logger } from './util/logger';
-import Routes from './routes';
-import db from './util/db';
+import { logger } from './api/util/logger';
+import Routes from './api/routes';
+import db from './api/util/db';
 import swaggerDocument from './swagger.json';
 
 const { CronJob } = require('cron');
