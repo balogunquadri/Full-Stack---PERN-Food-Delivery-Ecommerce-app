@@ -1,0 +1,158 @@
+:root {
+  --red: #ef1f1f;
+  --nunito: "Nunito", sans-serif;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.home-page {
+  color: #fff;
+  background-image: url('./assets/img/banner.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: multiply;
+  background-position: 10% 65%;
+}
+
+.home-page .home-header {
+  background: none;
+}
+
+.home-page .banner {
+  padding: 120px;
+}
+
+.home-page .banner__text {
+  font-size: 2.5rem;
+}
+
+.home-page footer {
+  background: none;
+}
+
+.page-section {
+  margin: 80px 60px;
+}
+
+.ribbon {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.ribbon::before,
+.ribbon::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  display: block;
+  border: 10px solid var(--red);
+}
+
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 266px;
+  padding: 5px 0;
+  background-color: var(--red);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.ribbon-top-left {
+  top: -10px;
+  left: -10px;
+}
+
+.ribbon-top-left::before,
+.ribbon-top-left::after {
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+
+.ribbon-top-left::before {
+  top: 0;
+  right: 49px;
+}
+
+.ribbon-top-left::after {
+  bottom: 49px;
+  left: 0;
+}
+
+.ribbon-top-left span {
+  right: -25px;
+  top: 30px;
+  transform: rotate(-45deg);
+}
+
+/* General Responsive Styles */
+@media only screen and (max-width: 900px) {
+  .home-page {
+    overflow: scroll;
+  }
+
+  .page-section {
+    margin: 80px 20px;
+  }
+}
+
+/* Styles */
+.Red {
+  color: var(--red);
+}
+
+.Hide { 
+  display: none;
+}
+
+button {
+  padding: 0.8rem;
+  border: none;
+  outline: none;
+  background-color: var(--red);
+  color: #fff;
+  font-family: inherit;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.Btn {
+  padding: 0.8rem;
+  border: none;
+  outline: none;
+  background-color: var(--red);
+  color: #fff;
+  font-family: inherit;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.Right__Btn__lg {
+  float: right;
+  padding: 1.1rem 1.4rem !important;
+}

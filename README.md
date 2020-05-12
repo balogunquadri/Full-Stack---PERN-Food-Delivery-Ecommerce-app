@@ -1,0 +1,5 @@
+- [Node.js](http://www.nodejs.org/) - Runtime-Enviroment
+- [React.js](https://reactjs.com) - Front-End Library
+- [Express.js](https://expressjs.com) - Backend Framework
+- [PostgreSQL](https://postgresql.org) - Database
+- [Redux](https://redux.js.org) - State Management Tool
