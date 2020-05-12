@@ -4,11 +4,20 @@
   "description": "Meal Booking Ecommerce App",
   "main": "api/index.js",
   "scripts": {
-    "start": "node index.js",
-    "heroku-postbuild": "cd ./client && npm install && npm run build",
+    "start": "node ./build/index.js",
     "client": "cd client && npm start",
     "dev": "nodemon --exec babel-node api/index.js",
-    "test": "nyc mocha -r esm --recursive -t 5000 --exit"
+    "test": "nyc mocha -r esm --recursive -t 5000 --exit",
+    "build-server": "npm run clean && npm run build-babel",
+    "create-client-env": "cd ./client && cat .env.heroku >> .env",
+    "build-client": "cd ./client && npm install && npm run build",
+    "build": "npm run build-server && npm run create-client-env",
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel -d ./build ./api -s --copy-files",
+    "generate-lcov": "nyc report --reporter=text-lcov > lcov.info",
+    "coveralls-coverage": "coveralls < lcov.info",
+    "codeclimate-coverage": "codeclimate-test-reporter < lcov.info",
+    "coverage": "nyc npm test && npm run generate-lcov && npm run coveralls-coverage && npm run codeclimate-coverage"
   },
   "repository": {
     "type": "git",
